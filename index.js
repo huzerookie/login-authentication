@@ -39,7 +39,7 @@ initializePassport(passport,
     async email => await User.findOne({ email })
 )
 app.use(flash())
-app.use(cookieParser(process.en.SESSION_SECRET))
+app.use(cookieParser(process.env.SESSION_SECRET))
 app.use(session({
     secret: process.env.SESSION_SECRET,
     resave: false,
