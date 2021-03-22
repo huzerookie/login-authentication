@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="/nodemodules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/utils/css/login-style.css" />
+</head>
+
+<body>
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <div class="fadeIn first margin-top-2-em margin-bottom-2-em">
+                <h1>Register</h1>
+            </div>
+            <div>
+                <span class="message2">{{messageRegister}}</span>
+            </div>
+            <form method="POST" action="/register">
+                <div class="row register-cols">
+                    <div class="col-md-6">
+                        <input type="text" id="firstName" class="fadeIn second" name="firstName"
+                            placeholder="First Name" tabindex="1" required="true">
+                        <input type="email" id="email" class="fadeIn third" name="email" placeholder="Email"
+                            tabindex="3" required="true">
+                        <input type="text" id="employeeId" class="fadeIn third" name="employeeId"
+                            placeholder="Employee ID" tabindex="5" required="true">
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" id="lastName" class="fadeIn third" name="lastName" placeholder="Last Name"
+                            tabindex="2" required="true">
+                        <input type="password" id="password" class="fadeIn second" name="password"
+                            placeholder="Password" minlength="6" tabindex="4" required="true">
+                        <input type="text" id="organization" class="fadeIn third" name="organization"
+                            placeholder="Organization" pattern="[a-zA-Z\s]+" tabindex="6" required="true">
+                    </div>
+                </div>
+                <input type="submit" class="fadeIn fourth margin-top-2-em margin-bottom-2-em" value="Register">
+            </form>
+            <!-- Remind Passowrd -->
+            <div id="formFooter">
+                <span>Already have an account? <a href="/login">Login</a></span>
+            </div>
+
+        </div>
+        {{>footer}}
+    </div>
+
+</body>
+
+</html>
