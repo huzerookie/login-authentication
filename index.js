@@ -6,6 +6,7 @@ const app = express();
 const passport = require('passport')
 const flash = require('express-flash')
 const session = require('express-session')
+const cookieParser = require('cookie-parser')
 const methodOverride = require('method-override')
 const bcrypt = require('bcrypt')
 const port = process.env.PORT || 3000;
@@ -38,13 +39,13 @@ initializePassport(passport,
     async email => await User.findOne({ email })
 )
 app.use(flash())
+app.use(cookieParser(process.en.SESSION_SECRET))
 app.use(session({
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false
 }))
 app.use(passport.initialize())
-app.use(express.cookieParser(process.env.SESSION_SECRET));
 app.use(passport.session())
 app.use(methodOverride('_method'))
 
