@@ -44,6 +44,7 @@ app.use(session({
     saveUninitialized: false
 }))
 app.use(passport.initialize())
+app.use(express.cookieParser(process.env.SESSION_SECRET));
 app.use(passport.session())
 app.use(methodOverride('_method'))
 
