@@ -1,6 +1,6 @@
 Login Authentication Application Prototype for Anatartica Global
 
-The routing logic is present in index.js.
+The routing logic is present in index.js, which is maintained using express.js .
 Database connection properties are mentioned in /db/mongoose.js.
 User Schema is present in /db/userMongoose.js
 The Handlebars (login, register, user-list) and CSS files are present inside /public/utils.
