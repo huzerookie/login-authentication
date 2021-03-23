@@ -50,8 +50,7 @@ app.use(passport.session())
 app.use(methodOverride('_method'))
 
 //Routing
-app.get('/login', checkNotAuthenticated, (req, res) => {
-    //res.send('Hello World');
+app.get('/login', checkNotAuthenticated, async (req, res) => {
     messageRegister = '';
     res.render('login', {
         message1,

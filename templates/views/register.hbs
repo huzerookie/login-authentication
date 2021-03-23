@@ -60,12 +60,15 @@
                 </div>
                 <div class="row register-cols">
                     <div class="col-md-6">
-                        <input type="text" id="employeeId" class="fadeIn third" name="employeeId"
-                            placeholder="Employee ID" tabindex="5" required="true">
+                        <input type="text" id="employeeId" class="fadeIn third" name="employeeId" pattern="[a-zA-Z0-9]+"
+                            oninvalid="this.setCustomValidity('Please enter valid Employee Id without spaces')"
+                            oninput="this.setCustomValidity('')" placeholder="Employee ID" tabindex="5" required="true">
                     </div>
                     <div class="col-md-6">
                         <input type="text" id="organization" class="fadeIn third" name="organization"
-                            placeholder="Organization" pattern="[a-zA-Z\s]+" tabindex="6" required="true">
+                            placeholder="Organization"
+                            oninvalid="this.setCustomValidity('Please enter valid Organization')"
+                            oninput="this.setCustomValidity('')" pattern="[a-zA-Z\s]+" tabindex="6" required="true">
                     </div>
                 </div>
                 <input type="submit" class="fadeIn fourth margin-top-2-em margin-bottom-2-em" value="Register">
