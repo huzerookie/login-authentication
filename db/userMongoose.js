@@ -58,7 +58,15 @@ userSchema.statics.checkDuplicates = async (email) => {
   if (user) throw new Error('Please register with a different email or Login');
   return user;
 }
-
 const User = mongoose.model("User", userSchema);
+mongoose.connection.once('open', () => {
+  console.log('Entering data');
+  users.forEach(async user => {
+    user.password = await bcrypt.hash(user.password, 8);
+    user.lastName = user.lastName.toUpperCase();
+    user.firstName = user.firstName.slice(0, 1).toUpperCase() + user.firstName.slice(1).toLowerCase();
+    await new User(user).save();
+  })
+})
 module.exports = User
 
