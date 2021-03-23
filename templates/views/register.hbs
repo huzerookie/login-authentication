@@ -20,7 +20,7 @@
                 <span class="message2">{{messageRegister}}</span>
             </div>
             <form method="POST" action="/register">
-                <div class="row register-cols">
+                {{!-- <div class="row register-cols">
                     <div class="col-md-6">
                         <input type="text" id="firstName" class="fadeIn second" name="firstName"
                             placeholder="First Name" tabindex="1" required="true">
@@ -34,6 +34,36 @@
                             tabindex="2" required="true">
                         <input type="password" id="password" class="fadeIn second" name="password"
                             placeholder="Password" minlength="6" tabindex="4" required="true">
+                        <input type="text" id="organization" class="fadeIn third" name="organization"
+                            placeholder="Organization" pattern="[a-zA-Z\s]+" tabindex="6" required="true">
+                    </div>
+                </div> --}}
+                <div class="row register-cols">
+                    <div class="col-md-6">
+                        <input type="text" id="firstName" class="fadeIn second" name="firstName"
+                            placeholder="First Name" tabindex="1" required="true">
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" id="lastName" class="fadeIn third" name="lastName" placeholder="Last Name"
+                            tabindex="2" required="true">
+                    </div>
+                </div>
+                <div class="row register-cols">
+                    <div class="col-md-6">
+                        <input type="email" id="email" class="fadeIn third" name="email" placeholder="Email"
+                            tabindex="3" required="true">
+                    </div>
+                    <div class="col-md-6">
+                        <input type="password" id="password" class="fadeIn second" name="password"
+                            placeholder="Password" minlength="6" tabindex="4" required="true">
+                    </div>
+                </div>
+                <div class="row register-cols">
+                    <div class="col-md-6">
+                        <input type="text" id="employeeId" class="fadeIn third" name="employeeId"
+                            placeholder="Employee ID" tabindex="5" required="true">
+                    </div>
+                    <div class="col-md-6">
                         <input type="text" id="organization" class="fadeIn third" name="organization"
                             placeholder="Organization" pattern="[a-zA-Z\s]+" tabindex="6" required="true">
                     </div>
