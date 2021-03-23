@@ -1,8 +1,6 @@
 const { mongoose } = require('./mongoose');
 const validator = require("validator");
 const bcrypt = require("bcrypt");
-const users = require("../public/utils/data/data.json");
-
 // First Name, Last Name, Email ID, Password, a unique employeeID and Organization Name
 const userSchema = new mongoose.Schema({
   firstName: {
@@ -59,14 +57,5 @@ userSchema.statics.checkDuplicates = async (email) => {
   return user;
 }
 const User = mongoose.model("User", userSchema);
-mongoose.connection.once('open', () => {
-  console.log('Entering data');
-  users.forEach(async user => {
-    user.password = await bcrypt.hash(user.password, 8);
-    user.lastName = user.lastName.toUpperCase();
-    user.firstName = user.firstName.slice(0, 1).toUpperCase() + user.firstName.slice(1).toLowerCase();
-    await new User(user).save();
-  })
-})
 module.exports = User
 
